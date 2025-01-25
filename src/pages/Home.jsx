@@ -7,7 +7,7 @@ import { getSocket } from '../store/socketmanager'
 const Home = () => {
 
   let url = import.meta.env.VITE_DEPLOYEMENT==="production"?import.meta.env.VITE_ENDPOINT :"http://localhost:8080";
-  
+
     let socket = getSocket()
     console.log(socket)
   let userSlice = useSelector((state)=>state.user)
@@ -41,7 +41,7 @@ const Home = () => {
       console.log(ans)
       setsentMail([...sentMail,ans])
     })
-  },[socket.id,sentMail])
+  },[socket?.id,sentMail])
 
 
   return (

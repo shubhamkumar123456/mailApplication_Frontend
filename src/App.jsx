@@ -105,6 +105,7 @@ function App() {
  </Modal>
  <Routes>
     {socketSlice.isConnected && <Route path='/' element={login===true ? <Home/> :<Navigate to='/login'/>}/>}
+    {!socketSlice.isConnected && <Route path='/' element={login===true ? <Home/> :<Navigate to='/login'/>}/>}
      <Route path='/login' element={login===false? <Login/> :<Navigate to="/"/>}/>
      <Route path='/signup' element={login===false? <Signup/>:<Navigate to='/'/>}/>
     {socketSlice.isConnected  && <Route path='/sent' element={login===true? <Sent/>:<Navigate to='/login'/>}/>}

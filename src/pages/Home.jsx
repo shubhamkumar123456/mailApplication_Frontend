@@ -37,7 +37,7 @@ const Home = () => {
 
 
   useEffect(()=>{
-    socket.on('recieveMsg',(ans)=>{
+    socket?.on('recieveMsg',(ans)=>{
       console.log(ans)
       setsentMail([...sentMail,ans])
     })
